@@ -33,15 +33,6 @@
             margin-bottom: 20px;
             font-size: 1rem;
         }
-        .upload-hint {
-            background: #eaf2f8;
-            border-radius: 40px;
-            padding: 8px 20px;
-            display: inline-block;
-            font-size: 0.85rem;
-            color: #2c3e50;
-            margin-top: 5px;
-        }
         
         /* 分類篩選按鈕 */
         .filter-section {
@@ -187,45 +178,14 @@
             gap: 15px;
             margin-bottom: 15px;
         }
-        .cover-upload {
+        .cover-img {
             width: 105px;
             height: 105px;
-            background: #e9ecef;
+            object-fit: cover;
             border-radius: 12px;
-            border: 2px dashed #bdc3c7;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid #e1e8ed;
             flex-shrink: 0;
-            transition: border 0.2s;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        .cover-upload:hover {
-            border-color: #d35400;
-            background-color: #fef5e7;
-        }
-        .cover-upload.has-image {
-            border-style: solid;
-            border-color: #27ae60;
-        }
-        .cover-upload .placeholder-text {
-            font-size: 0.65rem;
-            color: #6c7a89;
-            text-align: center;
-            padding: 8px;
-            font-weight: 500;
-            background: rgba(255,255,255,0.8);
-            border-radius: 20px;
-            pointer-events: none;
-        }
-        .cover-upload input {
-            display: none;
+            background: #f8fbfc;
         }
         .album-meta {
             flex: 1;
@@ -361,8 +321,7 @@
 <div class="container">
     <h1>🎧 EXO 專輯收藏庫</h1>
     <div class="sub-intro">
-        點擊封面框即可上傳圖片 · 勾選已收藏版本
-        <div class="upload-hint">📸 每張專輯都可以直接上傳封面圖，圖片會自動保存喺瀏覽器</div>
+        勾選已收藏版本 · 自動保存進度
     </div>
 
     <!-- 分類篩選按鈕 -->
@@ -405,10 +364,7 @@
             <!-- MAMA -->
             <div class="album-card" data-album="mama" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="mama" style="background-image: url('https://i.postimg.cc/4dNXRqyz/Mama.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 MAMA<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/4dNXRqyz/Mama.jpg" alt="MAMA">
                     <div class="album-meta">
                         <div class="album-title">MAMA <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">迷你一輯</span>
@@ -429,10 +385,7 @@
             <!-- XOXO -->
             <div class="album-card" data-album="xoxo" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="xoxo" style="background-image: url('https://i.postimg.cc/nzcnfgrD/xoxo.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 XOXO<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/nzcnfgrD/xoxo.jpg" alt="XOXO">
                     <div class="album-meta">
                         <div class="album-title">XOXO <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規一輯</span>
@@ -446,10 +399,7 @@
             <!-- GROWL -->
             <div class="album-card" data-album="growl" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="growl" style="background-image: url('https://i.postimg.cc/sXD3CqxG/Growl.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 GROWL<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/sXD3CqxG/Growl.jpg" alt="GROWL">
                     <div class="album-meta">
                         <div class="album-title">GROWL <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規一輯改版</span>
@@ -463,10 +413,7 @@
             <!-- 12月的奇蹟 -->
             <div class="album-card" data-album="mid" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="mid" style="background-image: url('https://i.postimg.cc/wvT9YZM3/12月的奇蹟.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 12月的奇蹟<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/wvT9YZM3/12月的奇蹟.jpg" alt="12月的奇蹟">
                     <div class="album-meta">
                         <div class="album-title">12月的奇蹟 <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">冬季特別專輯</span>
@@ -487,10 +434,7 @@
             <!-- Overdose -->
             <div class="album-card" data-album="overdose" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="overdose" style="background-image: url('https://i.postimg.cc/HxsT1Rnn/Exo_Koverdose.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Overdose<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/HxsT1Rnn/Exo_Koverdose.jpg" alt="Overdose">
                     <div class="album-meta">
                         <div class="album-title">Overdose <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">迷你二輯</span>
@@ -511,10 +455,7 @@
             <!-- EXODUS -->
             <div class="album-card" data-album="exodus" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="exodus" style="background-image: url('https://i.postimg.cc/268CNMyq/EXODUS_EXO.png'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 EXODUS<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/268CNMyq/EXODUS_EXO.png" alt="EXODUS">
                     <div class="album-meta">
                         <div class="album-title">EXODUS <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規二輯</span>
@@ -552,10 +493,7 @@
             <!-- LOVE ME RIGHT -->
             <div class="album-card" data-album="lmr" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="lmr" style="background-image: url('https://i.postimg.cc/DZy73H08/Love_me_right.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 LOVE ME RIGHT<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/DZy73H08/Love_me_right.jpg" alt="LOVE ME RIGHT">
                     <div class="album-meta">
                         <div class="album-title">LOVE ME RIGHT <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規二輯改版</span>
@@ -575,10 +513,7 @@
             <!-- Sing For You -->
             <div class="album-card" data-album="sfy" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="sfy" style="background-image: url('https://i.postimg.cc/j5dRYm2q/EXO_Sing_for_You.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Sing For You<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/j5dRYm2q/EXO_Sing_for_You.jpg" alt="Sing For You">
                     <div class="album-meta">
                         <div class="album-title">Sing For You <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">冬季特別專輯</span>
@@ -623,10 +558,7 @@
             <!-- EX'ACT -->
             <div class="album-card" data-album="exact" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="exact" style="background-image: url('https://i.postimg.cc/ydY7CtxV/EXO_EXACT_cover.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 EX'ACT<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/ydY7CtxV/EXO_EXACT_cover.jpg" alt="EX'ACT">
                     <div class="album-meta">
                         <div class="album-title">EX'ACT <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規三輯</span>
@@ -652,10 +584,7 @@
             <!-- LOTTO -->
             <div class="album-card" data-album="lotto" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="lotto" style="background-image: url('https://i.postimg.cc/268CNMyr/lotto.png'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 LOTTO<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/268CNMyr/lotto.png" alt="LOTTO">
                     <div class="album-meta">
                         <div class="album-title">LOTTO <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規三輯改版</span>
@@ -675,10 +604,7 @@
             <!-- For Life -->
             <div class="album-card" data-album="forlife" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="forlife" style="background-image: url('https://i.postimg.cc/KzvmhwjF/EXO_For_Life.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 For Life<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/KzvmhwjF/EXO_For_Life.jpg" alt="For Life">
                     <div class="album-meta">
                         <div class="album-title">For Life <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">冬季特別專輯</span>
@@ -692,10 +618,7 @@
             <!-- Hey Mama! (CBX) -->
             <div class="album-card" data-album="heymama" data-category="cbx">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="heymama" style="background-image: url('https://i.postimg.cc/3RJ3QVNH/Hey_Mama_EXO_CBX_EP.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Hey Mama!<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/3RJ3QVNH/Hey_Mama_EXO_CBX_EP.jpg" alt="Hey Mama!">
                     <div class="album-meta">
                         <div class="album-title">Hey Mama! <span class="category-badge badge-cbx">CBX</span></div>
                         <span class="album-type">CBX 迷你一輯</span>
@@ -722,10 +645,7 @@
             <!-- THE WAR -->
             <div class="album-card" data-album="thewar" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="thewar" style="background-image: url('https://i.postimg.cc/wvT9YZMY/Thewar_EXO.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 THE WAR<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/wvT9YZMY/Thewar_EXO.jpg" alt="THE WAR">
                     <div class="album-meta">
                         <div class="album-title">THE WAR <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規四輯</span>
@@ -754,10 +674,7 @@
             <!-- The Power of Music -->
             <div class="album-card" data-album="power" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="power" style="background-image: url('https://i.postimg.cc/N0xQVBsf/Power_of_music.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 The Power of Music<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/N0xQVBsf/Power_of_music.jpg" alt="The Power of Music">
                     <div class="album-meta">
                         <div class="album-title">The Power of Music <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規四輯改版</span>
@@ -776,10 +693,7 @@
             <!-- Universe -->
             <div class="album-card" data-album="universe" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="universe" style="background-image: url('https://i.postimg.cc/q7GpY4Jp/universe.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Universe<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/q7GpY4Jp/universe.jpg" alt="Universe">
                     <div class="album-meta">
                         <div class="album-title">Universe <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">冬季特別專輯</span>
@@ -799,10 +713,7 @@
             <!-- DON'T MESS UP MY TEMPO -->
             <div class="album-card" data-album="dmumt" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="dmumt" style="background-image: url('https://i.postimg.cc/vBHGwkTF/tempo.png'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 DON'T MESS UP MY TEMPO<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/vBHGwkTF/tempo.png" alt="DON'T MESS UP MY TEMPO">
                     <div class="album-meta">
                         <div class="album-title">DON'T MESS UP MY TEMPO <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規五輯</span>
@@ -823,10 +734,7 @@
             <!-- LOVE SHOT -->
             <div class="album-card" data-album="loveshot" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="loveshot" style="background-image: url('https://i.postimg.cc/cJcdj0xW/love_shot.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 LOVE SHOT<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/cJcdj0xW/love_shot.jpg" alt="LOVE SHOT">
                     <div class="album-meta">
                         <div class="album-title">LOVE SHOT <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規五輯改版</span>
@@ -845,10 +753,7 @@
             <!-- Blooming Days (CBX) -->
             <div class="album-card" data-album="blooming" data-category="cbx">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="blooming" style="background-image: url('https://i.postimg.cc/5tmfGb4W/Blooming_Days_CBX.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Blooming Days<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/5tmfGb4W/Blooming_Days_CBX.jpg" alt="Blooming Days">
                     <div class="album-meta">
                         <div class="album-title">Blooming Days <span class="category-badge badge-cbx">CBX</span></div>
                         <span class="album-type">CBX 迷你二輯</span>
@@ -874,10 +779,7 @@
             <!-- OBSESSION -->
             <div class="album-card" data-album="obsession" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="obsession" style="background-image: url('https://i.postimg.cc/9fBcSCm3/obsession.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 OBSESSION<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/9fBcSCm3/obsession.jpg" alt="OBSESSION">
                     <div class="album-meta">
                         <div class="album-title">OBSESSION <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規六輯</span>
@@ -898,10 +800,7 @@
             <!-- What a life (SC) -->
             <div class="album-card" data-album="whatalife" data-category="sc">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="whatalife" style="background-image: url('https://i.postimg.cc/cJcdj0sF/Exo_SC_What_a_Life.png'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 What a life<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/cJcdj0sF/Exo_SC_What_a_Life.png" alt="What a life">
                     <div class="album-meta">
                         <div class="album-title">What a life <span class="category-badge badge-sc">SC</span></div>
                         <span class="album-type">SC 迷你一輯</span>
@@ -928,10 +827,7 @@
             <!-- April, and a flower (Chen) -->
             <div class="album-card" data-album="aprilflower" data-category="chen">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="aprilflower" style="background-image: url('https://i.postimg.cc/qBDv4J8M/April.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 April, and a flower<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/qBDv4J8M/April.jpg" alt="April, and a flower">
                     <div class="album-meta">
                         <div class="album-title">April, and a flower <span class="category-badge badge-chen">CHEN</span></div>
                         <span class="album-type">迷你一輯</span>
@@ -951,10 +847,7 @@
             <!-- City Lights (Baekhyun) -->
             <div class="album-card" data-album="citylights" data-category="baekhyun">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="citylights" style="background-image: url('https://i.postimg.cc/52L4B8TZ/citylight.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 City Lights<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/52L4B8TZ/citylight.jpg" alt="City Lights">
                     <div class="album-meta">
                         <div class="album-title">City Lights <span class="category-badge badge-baekhyun">BAEKHYUN</span></div>
                         <span class="album-type">迷你一輯</span>
@@ -974,10 +867,7 @@
             <!-- Dear my dear (Chen) -->
             <div class="album-card" data-album="dearmydear" data-category="chen">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="dearmydear" style="background-image: url('https://i.postimg.cc/Kvdc30qQ/Dear.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Dear my dear<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/Kvdc30qQ/Dear.jpg" alt="Dear my dear">
                     <div class="album-meta">
                         <div class="album-title">Dear my dear <span class="category-badge badge-chen">CHEN</span></div>
                         <span class="album-type">迷你二輯</span>
@@ -1004,10 +894,7 @@
             <!-- 1 Billion View (SC) -->
             <div class="album-card" data-album="1billion" data-category="sc">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="1billion" style="background-image: url('https://i.postimg.cc/02L5KVWL/1billionview.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 1 Billion View<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/02L5KVWL/1billionview.jpg" alt="1 Billion View">
                     <div class="album-meta">
                         <div class="album-title">1 Billion View <span class="category-badge badge-sc">SC</span></div>
                         <span class="album-type">SC 正規一輯</span>
@@ -1035,10 +922,7 @@
             <!-- Self-Portrait (Suho) -->
             <div class="album-card" data-album="selfportrait" data-category="suho">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="selfportrait" style="background-image: url('https://i.postimg.cc/pLzWfK47/self.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Self-Portrait<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/pLzWfK47/self.jpg" alt="Self-Portrait">
                     <div class="album-meta">
                         <div class="album-title">Self-Portrait <span class="category-badge badge-suho">SUHO</span></div>
                         <span class="album-type">迷你一輯</span>
@@ -1058,10 +942,7 @@
             <!-- Delight (Baekhyun) -->
             <div class="album-card" data-album="delight" data-category="baekhyun">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="delight" style="background-image: url('https://i.postimg.cc/L8L9tjGd/delight.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Delight<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/L8L9tjGd/delight.jpg" alt="Delight">
                     <div class="album-meta">
                         <div class="album-title">Delight <span class="category-badge badge-baekhyun">BAEKHYUN</span></div>
                         <span class="album-type">迷你二輯</span>
@@ -1090,10 +971,7 @@
             <!-- KAI (開) (Kai) -->
             <div class="album-card" data-album="kai1" data-category="kai">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="kai1" style="background-image: url('https://i.postimg.cc/P5YXW190/kai.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 KAI (開)<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/P5YXW190/kai.jpg" alt="KAI (開)">
                     <div class="album-meta">
                         <div class="album-title">KAI (開) <span class="category-badge badge-kai">KAI</span></div>
                         <span class="album-type">迷你一輯</span>
@@ -1136,10 +1014,7 @@
             <!-- DON'T FIGHT THE FEELING -->
             <div class="album-card" data-album="dftf" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="dftf" style="background-image: url('https://i.postimg.cc/6QhBSt9Y/Exo_Don_t_Fight_the_Feeling.png'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 DON'T FIGHT THE FEELING<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/6QhBSt9Y/Exo_Don_t_Fight_the_Feeling.png" alt="DON'T FIGHT THE FEELING">
                     <div class="album-meta">
                         <div class="album-title">DON'T FIGHT THE FEELING <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">特別專輯</span>
@@ -1170,10 +1045,7 @@
             <!-- Bambi (Baekhyun) -->
             <div class="album-card" data-album="bambi" data-category="baekhyun">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="bambi" style="background-image: url('https://i.postimg.cc/cLwxRfPN/bambi.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Bambi<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/cLwxRfPN/bambi.jpg" alt="Bambi">
                     <div class="album-meta">
                         <div class="album-title">Bambi <span class="category-badge badge-baekhyun">BAEKHYUN</span></div>
                         <span class="album-type">迷你三輯</span>
@@ -1199,10 +1071,7 @@
             <!-- Empathy (D.O.) -->
             <div class="album-card" data-album="empathy" data-category="do">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="empathy" style="background-image: url('https://i.postimg.cc/9QZmdysC/rose.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Empathy (共感)<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/9QZmdysC/rose.jpg" alt="Empathy">
                     <div class="album-meta">
                         <div class="album-title">Empathy (共感) <span class="category-badge badge-do">D.O.</span></div>
                         <span class="album-type">迷你一輯</span>
@@ -1222,10 +1091,7 @@
             <!-- Peaches (Kai) -->
             <div class="album-card" data-album="peaches" data-category="kai">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="peaches" style="background-image: url('https://i.postimg.cc/htTDLVNP/peaches.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Peaches<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/htTDLVNP/peaches.jpg" alt="Peaches">
                     <div class="album-meta">
                         <div class="album-title">Peaches <span class="category-badge badge-kai">KAI</span></div>
                         <span class="album-type">迷你二輯</span>
@@ -1252,10 +1118,7 @@
             <!-- Grey Suit (Suho) -->
             <div class="album-card" data-album="greysuit" data-category="suho">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="greysuit" style="background-image: url('https://i.postimg.cc/Z5pb86XY/Suho_Grey_Suit.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Grey Suit<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/Z5pb86XY/Suho_Grey_Suit.jpg" alt="Grey Suit">
                     <div class="album-meta">
                         <div class="album-title">Grey Suit <span class="category-badge badge-suho">SUHO</span></div>
                         <span class="album-type">迷你二輯</span>
@@ -1275,10 +1138,7 @@
             <!-- Brand New (Xiumin) -->
             <div class="album-card" data-album="brandnew" data-category="xiumin">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="brandnew" style="background-image: url('https://i.postimg.cc/8zMpRLxs/xiumin_brandnew_2.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Brand New<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/8zMpRLxs/xiumin_brandnew_2.jpg" alt="Brand New">
                     <div class="album-meta">
                         <div class="album-title">Brand New <span class="category-badge badge-xiumin">XIUMIN</span></div>
                         <span class="album-type">迷你一輯</span>
@@ -1299,10 +1159,7 @@
             <!-- Last Scene (Chen) -->
             <div class="album-card" data-album="lastscene" data-category="chen">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="lastscene" style="background-image: url('https://i.postimg.cc/t4Wq3F8s/last_scence.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Last Scene<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/t4Wq3F8s/last_scence.jpg" alt="Last Scene">
                     <div class="album-meta">
                         <div class="album-title">Last Scene <span class="category-badge badge-chen">CHEN</span></div>
                         <span class="album-type">迷你三輯</span>
@@ -1335,10 +1192,7 @@
             <!-- EXIST -->
             <div class="album-card" data-album="exist" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="exist" style="background-image: url('https://i.postimg.cc/MGwWdv8Y/Exo_Exist.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 EXIST<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/MGwWdv8Y/Exo_Exist.jpg" alt="EXIST">
                     <div class="album-meta">
                         <div class="album-title">EXIST <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規七輯</span>
@@ -1384,10 +1238,7 @@
             <!-- Rover (Kai) -->
             <div class="album-card" data-album="rover" data-category="kai">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="rover" style="background-image: url('https://i.postimg.cc/X7TNBs1n/rover.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Rover<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/X7TNBs1n/rover.jpg" alt="Rover">
                     <div class="album-meta">
                         <div class="album-title">Rover <span class="category-badge badge-kai">KAI</span></div>
                         <span class="album-type">迷你三輯</span>
@@ -1409,10 +1260,7 @@
             <!-- Expectation (D.O.) -->
             <div class="album-card" data-album="expectation" data-category="do">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="expectation" style="background-image: url('https://i.postimg.cc/VknfqX2v/somebody.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Expectation (期待)<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/VknfqX2v/somebody.jpg" alt="Expectation">
                     <div class="album-meta">
                         <div class="album-title">Expectation (期待) <span class="category-badge badge-do">D.O.</span></div>
                         <span class="album-type">迷你二輯</span>
@@ -1445,10 +1293,7 @@
             <!-- Blossom (D.O.) -->
             <div class="album-card" data-album="blossom" data-category="do">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="blossom" style="background-image: url('https://i.postimg.cc/15LRVvCJ/Blssom.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Blossom<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/15LRVvCJ/Blssom.jpg" alt="Blossom">
                     <div class="album-meta">
                         <div class="album-title">Blossom <span class="category-badge badge-do">D.O.</span></div>
                         <span class="album-type">迷你三輯</span>
@@ -1467,10 +1312,7 @@
             <!-- 1 to 3 (Suho) -->
             <div class="album-card" data-album="1to3" data-category="suho">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="1to3" style="background-image: url('https://i.postimg.cc/3xm8X2zy/1to3.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 1 to 3 (點線面)<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/3xm8X2zy/1to3.jpg" alt="1 to 3">
                     <div class="album-meta">
                         <div class="album-title">1 to 3 (點線面) <span class="category-badge badge-suho">SUHO</span></div>
                         <span class="album-type">迷你三輯</span>
@@ -1491,10 +1333,7 @@
             <!-- DOOR (Chen) -->
             <div class="album-card" data-album="door" data-category="chen">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="door" style="background-image: url('https://i.postimg.cc/y8c1m02Z/door.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 DOOR<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/y8c1m02Z/door.jpg" alt="DOOR">
                     <div class="album-meta">
                         <div class="album-title">DOOR <span class="category-badge badge-chen">CHEN</span></div>
                         <span class="album-type">迷你四輯</span>
@@ -1513,10 +1352,7 @@
             <!-- Black Out (Chanyeol) -->
             <div class="album-card" data-album="blackout" data-category="chanyeol">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="blackout" style="background-image: url('https://i.postimg.cc/8zMpRLxr/blackout.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Black Out<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/8zMpRLxr/blackout.jpg" alt="Black Out">
                     <div class="album-meta">
                         <div class="album-title">Black Out <span class="category-badge badge-chanyeol">CHANYEOL</span></div>
                         <span class="album-type">迷你一輯</span>
@@ -1537,10 +1373,7 @@
             <!-- Hello, World (Baekhyun) -->
             <div class="album-card" data-album="helloworld" data-category="baekhyun">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="helloworld" style="background-image: url('https://i.postimg.cc/0yDkY7hS/hello_world.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Hello, World<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/0yDkY7hS/hello_world.jpg" alt="Hello, World">
                     <div class="album-meta">
                         <div class="album-title">Hello, World <span class="category-badge badge-baekhyun">BAEKHYUN</span></div>
                         <span class="album-type">迷你四輯</span>
@@ -1575,10 +1408,7 @@
             <!-- Interview X (Xiumin) -->
             <div class="album-card" data-album="interviewx" data-category="xiumin">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="interviewx" style="background-image: url('https://i.postimg.cc/3whKndHw/X.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Interview X<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/3whKndHw/X.jpg" alt="Interview X">
                     <div class="album-meta">
                         <div class="album-title">Interview X <span class="category-badge badge-xiumin">XIUMIN</span></div>
                         <span class="album-type">迷你二輯</span>
@@ -1599,10 +1429,7 @@
             <!-- Wait On Me (Kai) -->
             <div class="album-card" data-album="waitonme" data-category="kai">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="waitonme" style="background-image: url('https://i.postimg.cc/8CG1tjV5/wait_on_me.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Wait On Me<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/8CG1tjV5/wait_on_me.jpg" alt="Wait On Me">
                     <div class="album-meta">
                         <div class="album-title">Wait On Me <span class="category-badge badge-kai">KAI</span></div>
                         <span class="album-type">迷你四輯</span>
@@ -1624,10 +1451,7 @@
             <!-- Essence of Reverie (Baekhyun) -->
             <div class="album-card" data-album="essenceofreverie" data-category="baekhyun">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="essenceofreverie" style="background-image: url('https://i.postimg.cc/2ShkQnMs/ess.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Essence of Reverie<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/2ShkQnMs/ess.jpg" alt="Essence of Reverie">
                     <div class="album-meta">
                         <div class="album-title">Essence of Reverie <span class="category-badge badge-baekhyun">BAEKHYUN</span></div>
                         <span class="album-type">迷你五輯</span>
@@ -1648,10 +1472,7 @@
             <!-- Who Are You (Suho) -->
             <div class="album-card" data-album="whoareyou" data-category="suho">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="whoareyou" style="background-image: url('https://i.postimg.cc/LsSHNnMn/who_are_you.jpg'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Who Are You<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/LsSHNnMn/who_are_you.jpg" alt="Who Are You">
                     <div class="album-meta">
                         <div class="album-title">Who Are You <span class="category-badge badge-suho">SUHO</span></div>
                         <span class="album-type">迷你四輯</span>
@@ -1672,10 +1493,7 @@
             <!-- Arcadia (Chen) -->
             <div class="album-card" data-album="arcadia" data-category="chen">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="arcadia" style="background-image: url('https://i.postimg.cc/CK4wtShg/Chen_Arcadia_digital_album_cover.webp'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 Arcadia<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/CK4wtShg/Chen_Arcadia_digital_album_cover.webp" alt="Arcadia">
                     <div class="album-meta">
                         <div class="album-title">Arcadia <span class="category-badge badge-chen">CHEN</span></div>
                         <span class="album-type">迷你五輯</span>
@@ -1693,42 +1511,36 @@
                 </div>
             </div>
             <!-- Upside Down (Chanyeol) -->
-<div class="album-card" data-album="upsidedown" data-category="chanyeol">
-    <div class="album-header">
-        <div class="cover-upload has-image" data-cover-for="upsidedown" style="background-image: url('https://i.postimg.cc/0Nv8cbqY/upside_down.jpg'); background-size: cover;">
-            <span class="placeholder-text" style="opacity: 0;">📷 Upside Down<br>點擊上傳</span>
-            <input type="file" accept="image/*">
-        </div>
-        <div class="album-meta">
-            <div class="album-title">Upside Down <span class="category-badge badge-chanyeol">CHANYEOL</span></div>
-            <span class="album-type">迷你二輯</span>
-        </div>
-    </div>
-    <div class="version-list">
-        <details>
-            <summary>Photobook ver.</summary>
-            <div class="sub-version-grid">
-                <label class="sub-item"><input type="checkbox" data-version="upsidedown-on"> On</label>
-                <label class="sub-item"><input type="checkbox" data-version="upsidedown-off"> Off</label>
+            <div class="album-card" data-album="upsidedown" data-category="chanyeol">
+                <div class="album-header">
+                    <img class="cover-img" src="https://i.postimg.cc/0Nv8cbqY/upside_down.jpg" alt="Upside Down">
+                    <div class="album-meta">
+                        <div class="album-title">Upside Down <span class="category-badge badge-chanyeol">CHANYEOL</span></div>
+                        <span class="album-type">迷你二輯</span>
+                    </div>
+                </div>
+                <div class="version-list">
+                    <details>
+                        <summary>Photobook ver.</summary>
+                        <div class="sub-version-grid">
+                            <label class="sub-item"><input type="checkbox" data-version="upsidedown-on"> On</label>
+                            <label class="sub-item"><input type="checkbox" data-version="upsidedown-off"> Off</label>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>SMini ver.</summary>
+                        <div class="sub-version-grid">
+                            <label class="sub-item"><input type="checkbox" data-version="upsidedown-smini-0v"> 0V</label>
+                            <label class="sub-item"><input type="checkbox" data-version="upsidedown-smini-1bv"> 1BV</label>
+                        </div>
+                    </details>
+                    <label class="version-item"><input type="checkbox" data-version="upsidedown-selfie"> Selfie ver.</label>
+                </div>
             </div>
-        </details>
-        <details>
-            <summary>SMini ver.</summary>
-            <div class="sub-version-grid">
-                <label class="sub-item"><input type="checkbox" data-version="upsidedown-smini-0v"> 0V</label>
-                <label class="sub-item"><input type="checkbox" data-version="upsidedown-smini-1bv"> 1BV</label>
-            </div>
-        </details>
-        <label class="version-item"><input type="checkbox" data-version="upsidedown-selfie"> Selfie ver.</label>
-    </div>
-</div>
             <!-- BLISS (D.O.) -->
             <div class="album-card" data-album="bliss" data-category="do">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="bliss" style="background-image: url('https://i.postimg.cc/xdP97n0g/D_O_Bliss_digital_album_cover.webp'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 BLISS<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/xdP97n0g/D_O_Bliss_digital_album_cover.webp" alt="BLISS">
                     <div class="album-meta">
                         <div class="album-title">BLISS <span class="category-badge badge-do">D.O.</span></div>
                         <span class="album-type">正規一輯</span>
@@ -1754,10 +1566,7 @@
             <!-- REVERXE -->
             <div class="album-card" data-album="reverxe" data-category="exo">
                 <div class="album-header">
-                    <div class="cover-upload has-image" data-cover-for="reverxe" style="background-image: url('https://i.postimg.cc/qRMpHSqX/Reverxe_cover.png'); background-size: cover;">
-                        <span class="placeholder-text" style="opacity: 0;">📷 REVERXE<br>點擊上傳</span>
-                        <input type="file" accept="image/*">
-                    </div>
+                    <img class="cover-img" src="https://i.postimg.cc/qRMpHSqX/Reverxe_cover.png" alt="REVERXE">
                     <div class="album-meta">
                         <div class="album-title">REVERXE <span class="category-badge badge-exo">EXO</span></div>
                         <span class="album-type">正規八輯</span>
@@ -1787,7 +1596,7 @@
     </div>
 
     <div class="footer-note">
-        💡 所有勾選狀態同封面圖片都會自動保存喺你嘅瀏覽器 · 可按「匯出備份」保存進度
+        💡 所有勾選狀態會自動保存 · 可按「匯出備份」保存進度
     </div>
 </div>
 
@@ -1839,58 +1648,10 @@
             cb.addEventListener('change', saveCheckboxes);
         });
 
-        // 封面圖片上傳功能
-        function initCoverUpload() {
-            const coverDivs = document.querySelectorAll('.cover-upload');
-            
-            coverDivs.forEach(div => {
-                const input = div.querySelector('input[type="file"]');
-                const albumKey = div.dataset.coverFor;
-                
-                const savedImage = localStorage.getItem(`cover_${albumKey}`);
-                if (savedImage) {
-                    div.style.backgroundImage = `url('${savedImage}')`;
-                    div.style.backgroundSize = 'cover';
-                    div.classList.add('has-image');
-                    const placeholder = div.querySelector('.placeholder-text');
-                    if (placeholder) placeholder.style.opacity = '0';
-                }
-                
-                div.addEventListener('click', (e) => {
-                    if (e.target.tagName !== 'INPUT') {
-                        input.click();
-                    }
-                });
-                
-                input.addEventListener('change', (e) => {
-                    const file = input.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = (event) => {
-                            const imageData = event.target.result;
-                            div.style.backgroundImage = `url('${imageData}')`;
-                            div.style.backgroundSize = 'cover';
-                            div.classList.add('has-image');
-                            const placeholder = div.querySelector('.placeholder-text');
-                            if (placeholder) placeholder.style.opacity = '0';
-                            
-                            try {
-                                localStorage.setItem(`cover_${albumKey}`, imageData);
-                            } catch(e) {
-                                console.warn('圖片太大，無法保存');
-                            }
-                        };
-                        reader.readAsDataURL(file);
-                    }
-                });
-            });
-        }
-
         // 匯出備份功能
         function exportBackup() {
             const backup = {
-                checkboxes: {},
-                covers: {}
+                checkboxes: {}
             };
             
             document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
@@ -1898,13 +1659,6 @@
                     backup.checkboxes[cb.dataset.version] = cb.checked;
                 }
             });
-            
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                if (key.startsWith('cover_')) {
-                    backup.covers[key] = localStorage.getItem(key);
-                }
-            }
             
             const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
@@ -1929,13 +1683,6 @@
                             }
                         });
                         saveCheckboxes();
-                    }
-                    
-                    if (backup.covers) {
-                        for (const key in backup.covers) {
-                            localStorage.setItem(key, backup.covers[key]);
-                        }
-                        location.reload();
                     }
                     
                     alert('✅ 備份匯入成功！');
@@ -1998,7 +1745,6 @@
 
         // 初始化
         loadCheckboxes();
-        initCoverUpload();
         initFilter();
         
         // 備份按鈕事件
